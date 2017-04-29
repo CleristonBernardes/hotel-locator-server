@@ -1,12 +1,12 @@
 {
-  "name": "hotel-locator",
+  "name": "hotel-locator-server",
   "version": "0.0.1",
   "description": "Hotel locator engine",
   "readme": "README.md",
-  "main": "server/server.coffee",
+  "main": "server.coffee",
   "repository": {
     "type": "git",
-    "url": "git@github.com:Creative-Licence-Digital/hotel-locator.git"
+    "url": "git@github.com:Creative-Licence-Digital/hotel-locator-server.git"
   },
   "keywords": [
     "hotel",
@@ -14,7 +14,7 @@
     "hotel locator"
   ],
   "scripts": {
-    "start": "coffee server/server.coffee"
+    "start": "coffee server.coffee"
   },
   "engines": {
     "node": "6.9.1",
@@ -26,7 +26,7 @@
   }],
   "author": "cleristonbernardes@gmail.com",
   "license": "ISC",
-  "homepage": "https://github.com/cleristonbernardes/hotel-locator",
+  "homepage": "https://github.com/cleristonbernardes/hotel-locator-server",
   "dependencies": {
     "async": "^2.0.0-rc.6",
     "body-parser": "^1.13.3",
