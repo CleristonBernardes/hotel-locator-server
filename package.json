@@ -17,8 +17,8 @@
     "start": "coffee server.coffee"
   },
   "engines": {
-    "node": "6.9.1",
-    "npm": "6.9.1"
+    "node": "4.6.1",
+    "npm": "4.6.1"
   },
   "buildpacks": [{
     "url": "https://github.com/heroku/heroku-buildpack-erlang",
