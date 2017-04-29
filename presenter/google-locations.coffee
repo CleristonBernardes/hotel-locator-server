@@ -45,7 +45,7 @@ get_location_details = (params, done) ->
         types:                  r.types
         reviews:                r.reviews
       }
-    done err, details.result
+    done err, formated_result
 
 
 

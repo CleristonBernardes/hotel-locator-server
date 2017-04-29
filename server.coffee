@@ -24,7 +24,7 @@ app.use (err, req, res, next) ->
 
 app.get '/', (req, res) ->
 	res.setHeader 'Content-Type', 'text/html'
-	html = "Hotel locaor server"
+	html = "Hotel locator server"
 	res.end html
 
 app.get '/nearest', (req, res) ->
