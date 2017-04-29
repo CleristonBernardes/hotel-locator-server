@@ -7,7 +7,6 @@ search_nearest_by_keyword = ({keyword, lat, long}, done) ->
   return done null, {error:"Inform the location"} unless lat? && long?
   location = [lat, long]
   google_locations_controller.search_location {keyword, location}, (err, locations) ->
-    # only one loop instead of calling _.first and array.map
     formated_result = []
     for result, index in locations.results
       if index < 5
@@ -36,15 +35,16 @@ search_location_photo = (result, done) ->
 get_location_details = (params, done) ->
   google_locations_controller.search_details params, (err, details) ->
     return done err if err?
-    formated_result = details.result.map (r) ->
-      {
+    formated_result = []
+    for r in details.result
+      formated_result.push({
         name:                   r.name
         formatted_address:      r.formatted_address
         formatted_phone_number: r.formatted_phone_number
         website:                r.website
         types:                  r.types
         reviews:                r.reviews
-      }
+      })
     done err, formated_result
 
 
