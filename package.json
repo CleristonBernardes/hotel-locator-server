@@ -1,0 +1,43 @@
+{
+  "name": "hotel-locator",
+  "version": "0.0.1",
+  "description": "Hotel locator engine",
+  "readme": "README.md",
+  "main": "server/server.coffee",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Creative-Licence-Digital/hotel-locator.git"
+  },
+  "keywords": [
+    "hotel",
+    "locator",
+    "hotel locator"
+  ],
+  "scripts": {
+    "start": "coffee server/server.coffee"
+  },
+  "engines": {
+    "node": "6.9.1",
+    "npm": "6.9.1"
+  },
+  "buildpacks": [{
+    "url": "https://github.com/heroku/heroku-buildpack-erlang",
+    "url": "heroku/nodejs"
+  }],
+  "author": "cleristonbernardes@gmail.com",
+  "license": "ISC",
+  "homepage": "https://github.com/cleristonbernardes/hotel-locator",
+  "dependencies": {
+    "async": "^2.0.0-rc.6",
+    "body-parser": "^1.13.3",
+    "coffee-script": "^1.10.0",
+    "config": "^1.21.0",
+    "express": "^4.13.3",
+    "google-locations": "0.2.0",
+    "node-googleplaces": "0.1.2",
+    "js-yaml": "^3.6.1",
+    "moment": "^2.10.6",
+    "moment-timezone": "^0.5.5",
+    "underscore": "^1.8.3"
+  }
+}

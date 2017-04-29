@@ -1,0 +1,9 @@
+
+server:
+  port: 8080
+
+database:
+  connection: ""
+
+API:
+  google_locations : "AIzaSyAMvhw1jLu-zm8507P1nWK-oKE2Ml-dApM"
