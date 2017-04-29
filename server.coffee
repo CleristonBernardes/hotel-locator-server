@@ -6,13 +6,19 @@ utils						= require './utils'
 
 
 app = express()
+
+app.use (req, res, next) ->
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With')
+  if ('OPTIONS' == req.method)
+    res.send 200
+  else
+    next()
 app.use bodyParser.urlencoded { extended: false }
 app.use bodyParser.json()
 app.use bodyParser.json { type: 'application/vnd.api+json' }
 app.use (err, req, res, next) ->
-	res.header('Access-Control-Allow-Origin', 'example.com')
-	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
-	res.header('Access-Control-Allow-Headers', 'Content-Type')
 	console.log "err", err
 	erro = {"error": "Could not persist the card"}
 	handleResponse res, 400, erro
