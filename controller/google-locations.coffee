@@ -1,6 +1,5 @@
-# spa_card_model  = require '../models/spa_card'
 google_locations  =  require 'google-locations'
-googleplaces = require 'googleplaces'
+googleplaces    = require 'googleplaces'
 config            = require 'config'
 
 locator = new google_locations(config.API.google_locations)
