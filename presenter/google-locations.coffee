@@ -35,16 +35,13 @@ search_location_photo = (result, done) ->
 get_location_details = (params, done) ->
   google_locations_controller.search_details params, (err, details) ->
     return done err if err?
-    formated_result = []
-    for r in details.result
-      formated_result.push({
-        name:                   r.name
-        formatted_address:      r.formatted_address
-        formatted_phone_number: r.formatted_phone_number
-        website:                r.website
-        types:                  r.types
-        reviews:                r.reviews
-      })
+    formated_result =
+      name:                   details.result?.name
+      formatted_address:      details.result?.formatted_address
+      formatted_phone_number: details.result?.formatted_phone_number
+      website:                details.result?.website
+      types:                  details.result?.types
+      reviews:                details.result?.reviews
     done err, formated_result
 
 
