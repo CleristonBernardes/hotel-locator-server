@@ -1,10 +1,10 @@
 # spa_card_model  = require '../models/spa_card'
 google_locations  =  require 'google-locations'
-node_googleplaces = require 'node-googleplaces'
+googleplaces = require 'googleplaces'
 config            = require 'config'
 
 locator = new google_locations(config.API.google_locations)
-photo_locator = new node_googleplaces(config.API.google_locations)
+photo_locator = new googleplaces(config.API.google_locations)
 
 search_location = ({keyword, location}, done) ->
   query = {keyword, location}
@@ -13,7 +13,7 @@ search_location = ({keyword, location}, done) ->
 
 search_photos = ({reference, maxheight, maxwidth}, done) ->
   query = {photoreference: reference, maxheight, maxwidth}
-  photo_locator.photo query, done
+  photo_locator.imageFetch query, done
 
 search_details = ({id}, done) ->
   locator.details {placeid: id}, done

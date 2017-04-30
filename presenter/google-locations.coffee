@@ -27,7 +27,6 @@ search_location_photo = (result, done) ->
   ref = result.photos[0]
   query = {reference: ref.photo_reference, maxheight: ref.height, maxwidth: ref.width}
   google_locations_controller.search_photos query, (err, photo) ->
-    # console.log "photo", photo.getUrl({'maxWidth': 35, 'maxHeight': 35})
     result.photo = photo
     result.photos = undefined
     done err
