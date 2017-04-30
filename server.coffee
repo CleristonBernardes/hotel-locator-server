@@ -25,11 +25,11 @@ app.use (err, req, res, next) ->
 app.get '/', (req, res) ->
 	res.setHeader 'Content-Type', 'text/html'
 	html = "Hotel locator server"
-	res.end html
+	res.write html
 
 app.get '/nearest', (req, res) ->
 	google_locations.search_nearest_by_keyword utils.get_parameters(req), (err, locations) ->
-		handleResponse err, details, res
+		handleResponse err, locations, res
 
 app.get '/details/:id', (req, res) ->
 	google_locations.get_location_details utils.get_parameters(req), (err, details) ->
