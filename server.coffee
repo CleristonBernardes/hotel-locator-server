@@ -19,7 +19,7 @@ app.use bodyParser.urlencoded { extended: false }
 app.use bodyParser.json()
 app.use bodyParser.json { type: 'application/vnd.api+json' }
 app.use (err, req, res, next) ->
-	erro = {"error": "Could not persist the card"}
+	erro = {"error": "Error finding a hotel..."}
 	handleResponse erro, null, res
 
 app.get '/', (req, res) ->
